@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid-container {
+  border: 2px solid black;
+  height: 960px;
+  width: 960px;
+}
