@@ -1,6 +1,6 @@
 const gridContainer = document.getElementById("grid-container");
 
-let gridSize = 16;
+let gridSize = 100;
 
 for (let i = 0; i < gridSize; i++){
   const gridBoxRow = document.createElement("div");
@@ -12,3 +12,8 @@ for (let i = 0; i < gridSize; i++){
     gridBoxRow.appendChild(gridBoxCol);
   }
 }
+
+const gridBoxes = document.querySelectorAll('.grid-box-col');
+gridBoxes.forEach(box => box.addEventListener('mouseover', function(){
+  box.style.backgroundColor = "black";
+}));
