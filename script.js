@@ -13,7 +13,9 @@ for (let i = 0; i < gridSize; i++){
   }
 }
 
-const gridBoxes = document.querySelectorAll('.grid-box-col');
-gridBoxes.forEach(box => box.addEventListener('mouseover', function(){
-  box.style.backgroundColor = "black";
-}));
+// Event delegation for faster handling and smoother tracking
+gridContainer.addEventListener("pointerover", function (e) {
+  if (e.target.classList.contains("grid-box-col")) {
+    e.target.style.backgroundColor = "black";
+  }
+});
