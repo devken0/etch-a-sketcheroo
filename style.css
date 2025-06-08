@@ -17,7 +17,12 @@ body {
   flex: 1;
   border-bottom: 0.5px solid gray;
 }
+
 .grid-box-col {
   flex: 1;
   border-right: 0.5px solid gray;
+}
+
+.grid-box-default:hover {
+  background-color: black;
 }
