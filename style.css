@@ -9,8 +9,8 @@ body {
   display: flex;
   flex-direction: column;
   border: 2px solid black;
-  height: 960px;
-  width: 960px;
+  height: 600px;
+  width: 600px;
 }
 
 .grid-box-row{
