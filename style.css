@@ -23,6 +23,10 @@ body {
   overflow: hidden;
 }
 
+#grid-container, .container{
+  width: 90vw;              /* % of the viewport width */
+}
+
 .grid-box-row{
   display: flex;
   flex: 1;
@@ -39,24 +43,24 @@ body {
 }
 
 @media (min-width: 600px){
-  #grid-container {
+  #grid-container, .container {
     width: 80vw;
   }
 }
 @media (min-width: 768px){
-  #grid-container {
+  #grid-container, .container{
     width: 60vw;
   }
 }
 
 @media (min-width: 1024px){
-  #grid-container {
+  #grid-container, .container{
     width: 50vw;
   }
 }
 
 @media (min-width: 1280px){
-  #grid-container {
+  #grid-container, .container {
     width: 40vw;
   }
 }
