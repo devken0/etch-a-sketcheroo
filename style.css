@@ -14,7 +14,8 @@ body {
 #grid-container {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 3px solid red;
+  background-color: bisque;
   border-radius: 20px;
   width: 100%;
   max-width: 700px;
