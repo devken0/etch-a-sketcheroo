@@ -17,10 +17,26 @@
     <button id="new-grid">Custom</button>
   </div>
   <div class="container">
-    <label for="mode-selection">Colors: </label>
-    <select name="mode-selection" id="mode-selection">
-      <option value="black-on-white">Black on White</option>
-      <option value="rainbow-on-white">Rainbow on White</option>
+    <div class="grid-toogle-buttons cabin-sketch-regular">
+      <label class="grid-toogle">
+        <input type="checkbox" id="toogleGrid" checked>
+        <span>Grid</span>
+      </label>
+      <label class="grid-toogle">
+        <input type="checkbox" id="toogleColor" checked>
+        <span>Colorful</span>
+      </label>
+      <label class="grid-toogle">
+        <input type="checkbox" id="toogleDarken" checked>
+        <span>Darken effect</span>
+      </label>
+    </div>
+    <div class="grid-size-buttons">
+      <select id="grid-size-select">
+        <option value="16">16 x 16</option>
+        <option value="32">32 x 32</option>
+        <option value="64">64 x 64</option>
+        <option value="96">96 x 96</option>
     </select>
     <input type="submit" value="OK">
   </div>
