@@ -37,3 +37,26 @@ body {
 .grid-box-default:hover {
   background-color: black;
 }
+
+@media (min-width: 600px){
+  #grid-container {
+    width: 80vw;
+  }
+}
+@media (min-width: 768px){
+  #grid-container {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 1024px){
+  #grid-container {
+    width: 50vw;
+  }
+}
+
+@media (min-width: 1280px){
+  #grid-container {
+    width: 40vw;
+  }
+}
