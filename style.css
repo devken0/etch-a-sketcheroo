@@ -5,6 +5,10 @@ body {
   align-items: center;
 }
 
+#title {
+  font-size: 3em;
+}
+
 #grid-container {
   display: flex;
   flex-direction: column;
