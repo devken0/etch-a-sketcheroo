@@ -17,7 +17,6 @@ body {
   border: 3px solid red;
   background-color: bisque;
   border-radius: 20px;
-  width: 90vw;              /* % of the viewport width */
   aspect-ratio: 1 / 1;      /* Keeps it square */
   margin-top: 20px;
   overflow: hidden;
