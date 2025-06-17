@@ -34,12 +34,36 @@ body {
 
 .grid-box-col {
   flex: 1;
+}
+
+.grid-guide {
   border-bottom: 0.5px solid gray;
   border-right: 0.5px solid gray;
 }
 
-.grid-box-default:hover {
-  background-color: black;
+.grid-toogle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+}
+
+.grid-size-buttons {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  gap: 0.2em;
+}
+
+.grid-toogle-buttons {
+  display: flex;
+  gap: 0.8em;
 }
 
 @media (min-width: 600px){
