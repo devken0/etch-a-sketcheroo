@@ -5,17 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <title>etch-a-sketcheroo</title>
 </head>
 <body>
-  <div id="title">Etch-A-Sketch</div>
-  <div id="grid-buttons">
-    <button id="16x16" class="preset">16x16</button>
-    <button id="32x32" class="preset">32x32</button>
-    <button id="64x64" class="preset">64x64</button>
-    <button id="96x96" class="preset">96x96</button>
-    <button id="new-grid">Custom</button>
-  </div>
+  <div id="title" class="cabin-sketch-bold">Etch-A-Sketch</div>
   <div class="container">
     <div class="grid-toogle-buttons cabin-sketch-regular">
       <label class="grid-toogle">
@@ -38,7 +32,8 @@
         <option value="64">64 x 64</option>
         <option value="96">96 x 96</option>
     </select>
-    <input type="submit" value="OK">
+      <button id="new-grid" ><i class="fa-solid fa-pen-to-square"></i></button>
+    </div>
   </div>
   <div id="grid-container"></div>
   <script src="script.js"></script>

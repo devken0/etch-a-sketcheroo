@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+
 body {
   display: flex;
   flex-direction: column;
@@ -5,6 +7,18 @@ body {
   align-items: center;
   background-image: linear-gradient(to right, #D38312, #A83279);
   color: white;
+}
+
+.cabin-sketch-regular {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-sketch-bold {
+  font-family: "Cabin Sketch", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 #title {
