@@ -12,17 +12,20 @@
   <div id="title" class="cabin-sketch-bold">Etch-A-Sketcheroo</div>
   <div class="container">
     <div class="grid-toogle-buttons cabin-sketch-regular">
-      <label class="grid-toogle">
+      <label class="grid-toogle, tooltip">
         <input type="checkbox" id="toogleGrid" checked>
         <span>Grid</span>
+        <span class="tip">Grid lines</span>
       </label>
-      <label class="grid-toogle">
+      <label class="grid-toogle, tooltip">
         <input type="checkbox" id="toogleColor" checked>
         <span>Colorful</span>
+        <span class="tip">Rainbow colors!</span>
       </label>
-      <label class="grid-toogle">
+      <label class="grid-toogle, tooltip">
         <input type="checkbox" id="toogleDarken" checked>
         <span>Darken effect</span>
+        <span class="tip">Darkening effect where each interaction darkens a cell by 10%.</span>
       </label>
     </div>
     <div class="grid-size-buttons">
@@ -32,7 +35,10 @@
         <option value="64">64 x 64</option>
         <option value="96">96 x 96</option>
       </select>
-      <button id="new-grid" ><i class="fa-solid fa-pen-to-square"></i></button>
+      <button id="new-grid" class="tooltip" >
+        <i class="fa-solid fa-pen-to-square"></i>
+        <span class="tip">Set a custom grid size</span>
+      </button>
     </div>
     </div>
   <div id="grid-container"></div>
