@@ -37,7 +37,8 @@ gridContainer.addEventListener("pointerover", function (e) {
     const btn = document.createElement('button');
     const ct = document.querySelector('.container');
 
-    btn.innerHTML = '<i class="fa-solid fa-broom"></i>';
+    btn.innerHTML = '<i class="fa-solid fa-broom"></i><span class="tip">Click this or press Esc to clear the grid.</span>';
+    btn.classList.add('tooltip');
     btn.setAttribute('id', 'clear-grid');
     ct.appendChild(btn);
 
