@@ -2,21 +2,11 @@ const gridContainer = document.getElementById("grid-container");
 const newGridBtn = document.getElementById('new-grid');
 const gridSizeSelect = document.getElementById('grid-size-select');
 const toogleGridBtn = document.getElementById('toogleGrid');
+const toogleEffectBtn = document.getElementById('toogleEffect');
+const toogleColorBtn = document.getElementById('toogleColor');
 let showGrid = true;
 let darken = true;
 let isColorful = true;
-
-function enableDarken(cell){
-  cell.addEventListener("pointerover", () => {
-    let darkness = parseFloat(cell.dataset.darkness);
-    if (darkness < 1){
-      darkness += 0.1;
-      cell.dataset.darkness = darkness.toFixed(1);
-      cell.style.backgroundColor = `rgba(0, 0, 0, ${darkness})`;
-    }
-    return cell;
-  })
-}
 
 function createGrid(gridSize = 16){
   for (let i = 0; i < gridSize; i++){
@@ -31,25 +21,51 @@ function createGrid(gridSize = 16){
       if (showGrid){
         gridBoxCol.classList.add('grid-guide');
       }
-      if (darken){
-        enableDarken(gridBoxCol);
-      }
       gridBoxRow.appendChild(gridBoxCol);
     }
   }
 }
 
-function clearGrid(){
+// Event delegation for faster handling and smoother tracking
+gridContainer.addEventListener("pointerover", function (e) {
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  let darkness = parseFloat(e.target.dataset.darkness);
+  const clearGridBtn = document.getElementById('clear-grid');
+  if (clearGridBtn == null){
+    const btn = document.createElement('button');
+    const ct = document.querySelector('.container');
 
-}
+    btn.innerHTML = '<i class="fa-solid fa-broom"></i>';
+    btn.setAttribute('id', 'clear-grid');
+    ct.appendChild(btn);
 
-// // Event delegation for faster handling and smoother tracking
-// gridContainer.addEventListener("pointerover", function (e) {
-//   if (e.target.classList.contains("grid-box-col")) {
-//     e.target.style.backgroundColor = "black";
-//   }
-//   // Add clear grid button 
-// });
+    btn.addEventListener('click', () => {
+      const cell = document.querySelectorAll('.grid-box-col');
+      cell.forEach(col => col.style.backgroundColor = `rgba(0, 0, 0, 0)`);
+    })
+  }
+  if (isColorful){
+    r = Math.floor(Math.random() * 256);
+    g = Math.floor(Math.random() * 256);
+    b = Math.floor(Math.random() * 256);
+  }
+  if (e.target.classList.contains("grid-box-col") && darken == true) {
+    if (darkness < 1){
+      darkness += 0.1;
+      e.target.dataset.darkness = darkness.toFixed(1);
+      e.target.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${darkness})`;
+    }
+  }
+  if (e.target.classList.contains("grid-box-col") && darken == false) {
+    if (darkness < 1){
+      darkness += 1;
+      e.target.dataset.darkness = darkness.toFixed(1);
+      e.target.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${darkness})`;
+    }
+  }
+});
 
 newGridBtn.addEventListener('click', () => {
   let gridSize = prompt("Enter grid size (1-100): ", 16);
@@ -84,6 +100,14 @@ toogleGridBtn.addEventListener('change', function() {
   const gridBoxCol = document.querySelectorAll('.grid-box-col');
   gridBoxCol.forEach(col => col.classList.toggle('grid-guide'));
   showGrid = !showGrid;
+})
+
+toogleEffectBtn.addEventListener('change', function() {
+  darken = !darken;
+})
+
+toogleColorBtn.addEventListener('change', function() {
+  isColorful = !isColorful;
 })
 
 createGrid();
