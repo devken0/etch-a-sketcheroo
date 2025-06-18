@@ -112,4 +112,13 @@ toogleColorBtn.addEventListener('change', function() {
   isColorful = !isColorful;
 })
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape"){
+    const cell = document.querySelectorAll('.grid-box-col');
+    const btn = document.getElementById('clear-grid');
+    cell.forEach(col => col.style.backgroundColor = `rgba(0, 0, 0, 0)`);
+    btn.remove();
+  }
+})
+
 createGrid();
