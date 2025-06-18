@@ -26,6 +26,11 @@ function createGrid(gridSize = 16){
   }
 }
 
+function clearGrid(cell){
+  cell.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+  cell.dataset.darkness = 0;
+}
+
 // Event delegation for faster handling and smoother tracking
 gridContainer.addEventListener("pointerover", function (e) {
   let r = 0;
@@ -43,8 +48,8 @@ gridContainer.addEventListener("pointerover", function (e) {
     ct.appendChild(btn);
 
     btn.addEventListener('click', () => {
-      const cell = document.querySelectorAll('.grid-box-col');
-      cell.forEach(col => col.style.backgroundColor = `rgba(0, 0, 0, 0)`);
+      const cells = document.querySelectorAll('.grid-box-col');
+      cells.forEach(clearGrid);
       btn.remove();
     })
   }
@@ -114,9 +119,9 @@ toogleColorBtn.addEventListener('change', function() {
 
 document.addEventListener('keydown', (e) => {
   if (e.key === "Escape"){
-    const cell = document.querySelectorAll('.grid-box-col');
+    const cells = document.querySelectorAll('.grid-box-col');
     const btn = document.getElementById('clear-grid');
-    cell.forEach(col => col.style.backgroundColor = `rgba(0, 0, 0, 0)`);
+    cells.forEach(clearGrid);
     btn.remove();
   }
 })
