@@ -45,6 +45,7 @@ gridContainer.addEventListener("pointerover", function (e) {
     btn.addEventListener('click', () => {
       const cell = document.querySelectorAll('.grid-box-col');
       cell.forEach(col => col.style.backgroundColor = `rgba(0, 0, 0, 0)`);
+      btn.remove();
     })
   }
   if (isColorful){
